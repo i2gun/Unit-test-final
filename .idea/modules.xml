@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Unit-test-final.iml" filepath="$PROJECT_DIR$/.idea/Unit-test-final.iml" />
+      <module fileurl="file://$PROJECT_DIR$/list-average-comparator.iml" filepath="$PROJECT_DIR$/list-average-comparator.iml" />
     </modules>
   </component>
 </project>

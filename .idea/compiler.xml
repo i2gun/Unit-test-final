@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Unit-test-final" />
+        <module name="list-average-comparator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
