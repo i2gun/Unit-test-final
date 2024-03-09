@@ -5,6 +5,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 import org.example.ListAverageComparator;
+import org.example.ListSumFinder;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,8 +13,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestListAverageComparator {
-
-    private final PrintStream standardOut = System.out;
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
     static ListAverageComparator listAverageComparator;
@@ -22,7 +21,8 @@ public class TestListAverageComparator {
 
     @BeforeAll
     public static void initTest() {
-        listAverageComparator = new ListAverageComparator();
+        ListSumFinder sumFinder = new ListSumFinder();
+        listAverageComparator = new ListAverageComparator(sumFinder);
     }
 
     @BeforeEach

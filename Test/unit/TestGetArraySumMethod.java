@@ -1,6 +1,7 @@
 package unit;
 
-import org.example.ListAverageComparator;
+import org.example.ListSumFinder;
+import org.example.ProjectConstants;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -11,22 +12,38 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestGetArraySumMethod {
 
-    static ListAverageComparator listAverageComparator;
+    static ListSumFinder listSumFinder;
 
     @BeforeAll
     public static void initTest() {
-        listAverageComparator = new ListAverageComparator();
+        listSumFinder = new ListSumFinder();
     }
 
     @Test
-    public void testGetArrayListSum() {
+    public void nullGetArrayListSumMethod() {
+        Double result = listSumFinder.getArrayListSum(null);
+
+        assertTrue(result == 0.0);
+    }
+
+    @Test
+    public void emptyGetArrayListSumMethod() {
+        List<Double> emptyList = new ArrayList<>();
+        Double result = listSumFinder.getArrayListSum(emptyList);
+
+        assertTrue(result == 0.0);
+    }
+
+    @Test
+    public void testGetArrayListSumMethod() {
         List<Double> list = new ArrayList<>();
         list.add(1.0);
         list.add(2.0);
         list.add(3.0);
-
         Double expected = 6.0;
 
-        assertTrue(Math.abs(expected - listAverageComparator.getArrayListSum(list)) < listAverageComparator.epsilon);
+        Double result = listSumFinder.getArrayListSum(list);
+
+        assertTrue(Math.abs(expected - result) < ProjectConstants.epsilon);
     }
 }

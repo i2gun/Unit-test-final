@@ -3,34 +3,31 @@ package org.example;
 import java.util.List;
 
 public class ListAverageComparator {
-    public final double epsilon = 0.000001;
+
+    public ListSumFinder listSumFinder;
+
+    public ListAverageComparator(ListSumFinder sumFinder) {
+        this.listSumFinder = sumFinder;
+    }
 
     public void compareTwoAveragesOfLists(List<Double> list1, List<Double> list2) {
         System.out.println(compareTwoAverages(getAverageOfList(list1), getAverageOfList(list2)));
     }
 
-    public Double getArrayListSum(List<Double> list) {
-        Double sum = 0.0;
-        for (Double num : list) {
-            sum += num;
-        }
-        return sum;
-    }
-
     public String compareTwoAverages(Double firstListAverage, Double secondListAverage) {
-        if (firstListAverage - secondListAverage > epsilon) {
+        if (firstListAverage - secondListAverage > ProjectConstants.epsilon) {
             return "Первый список имеет большее среднее значение";
-        } else if (secondListAverage - firstListAverage > epsilon) {
+        } else if (secondListAverage - firstListAverage > ProjectConstants.epsilon) {
             return "Второй список имеет большее среднее значение";
         }
         return "Средние значения равны";
     }
 
     public Double getAverageOfList(List<Double> list) {
-        if (list.isEmpty()) {
+        if (list == null || list.isEmpty()) {
             return 0.0;
         }
 
-        return getArrayListSum(list) / list.size();
+        return listSumFinder.getArrayListSum(list) / list.size();
     }
 }

@@ -1,6 +1,7 @@
 package unit;
 
 import org.example.ListAverageComparator;
+import org.example.ListSumFinder;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +13,8 @@ public class TestCompareTwoAverageMethod {
 
     @BeforeAll
     public static void initTest() {
-        listAverageComparator = new ListAverageComparator();
+        ListSumFinder sumFinder = new ListSumFinder();
+        listAverageComparator = new ListAverageComparator(sumFinder);
     }
 
     @Test

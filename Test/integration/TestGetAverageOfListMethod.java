@@ -1,6 +1,8 @@
 package integration;
 
 import org.example.ListAverageComparator;
+import org.example.ListSumFinder;
+import org.example.ProjectConstants;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +17,8 @@ public class TestGetAverageOfListMethod {
 
     @BeforeAll
     public static void initTest() {
-        listAverageComparator = new ListAverageComparator();
+        ListSumFinder sumFinder = new ListSumFinder();
+        listAverageComparator = new ListAverageComparator(sumFinder);
     }
 
     @Test
@@ -24,21 +27,10 @@ public class TestGetAverageOfListMethod {
         list.add(1.0);
         list.add(2.0);
         list.add(3.0);
-
         Double expected = 2.0;
 
-        assertTrue(Math.abs(expected - listAverageComparator.getAverageOfList(list)) < listAverageComparator.epsilon);
-    }
+        Double result = listAverageComparator.getAverageOfList(list);
 
-    @Test
-    public void mockTestGetAverageOfListMethod() {
-
-        assertTrue(true);
-    }
-
-    @Test
-    public void dummyTestGetAverageOfListMethod() {
-
-        assertTrue(true);
+        assertTrue(Math.abs(expected - result) < ProjectConstants.epsilon);
     }
 }
