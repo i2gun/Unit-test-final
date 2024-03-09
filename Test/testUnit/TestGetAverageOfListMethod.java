@@ -1,4 +1,4 @@
-package unit;
+package testUnit;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +9,7 @@ import org.example.ProjectConstants;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
@@ -36,7 +37,7 @@ public class TestGetAverageOfListMethod {
     public void nullTestGetAverageOfListMethod() {
         Double result = listAverageComparator.getAverageOfList(null);
 
-        assertTrue(result == 0.0);
+        assertEquals(result, 0.0);
     }
 
     @Test
@@ -44,7 +45,7 @@ public class TestGetAverageOfListMethod {
         List<Double> emptyList = new ArrayList<>();
         Double result = listAverageComparator.getAverageOfList(emptyList);
 
-        assertTrue(result == 0.0);
+        assertEquals(result, 0.0);
     }
 
     @Test

@@ -1,4 +1,4 @@
-package unit;
+package testUnit;
 
 import org.example.ListAverageComparator;
 import org.example.ListSumFinder;

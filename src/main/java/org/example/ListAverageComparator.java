@@ -4,7 +4,7 @@ import java.util.List;
 
 public class ListAverageComparator {
 
-    public ListSumFinder listSumFinder;
+    public final ListSumFinder listSumFinder;
 
     public ListAverageComparator(ListSumFinder sumFinder) {
         this.listSumFinder = sumFinder;

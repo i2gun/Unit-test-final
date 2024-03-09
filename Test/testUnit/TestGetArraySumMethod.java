@@ -1,4 +1,4 @@
-package unit;
+package testUnit;
 
 import org.example.ListSumFinder;
 import org.example.ProjectConstants;
@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestGetArraySumMethod {
@@ -23,7 +24,7 @@ public class TestGetArraySumMethod {
     public void nullGetArrayListSumMethod() {
         Double result = listSumFinder.getArrayListSum(null);
 
-        assertTrue(result == 0.0);
+        assertEquals(result, 0.0);
     }
 
     @Test
@@ -31,7 +32,7 @@ public class TestGetArraySumMethod {
         List<Double> emptyList = new ArrayList<>();
         Double result = listSumFinder.getArrayListSum(emptyList);
 
-        assertTrue(result == 0.0);
+        assertEquals(result, 0.0);
     }
 
     @Test

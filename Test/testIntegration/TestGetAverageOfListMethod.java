@@ -1,4 +1,4 @@
-package integration;
+package testIntegration;
 
 import org.example.ListAverageComparator;
 import org.example.ListSumFinder;

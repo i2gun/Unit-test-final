@@ -1,4 +1,4 @@
-package E2E;
+package testE2E;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
